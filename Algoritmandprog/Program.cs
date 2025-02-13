@@ -7,38 +7,51 @@ using System.Threading.Tasks;
 
 namespace Algoritmandprog
 {
-    internal class Balance
-    {
-        private readonly int balance = 38000;
-
-        public int B
-        {
-            get { return balance; }
-            //set { balance = value; }
-            //public int GetBalance()
-            //{
-            //    return balance;
-            //}
-
-            //public void SetBalance(int balance)
-            //{
-            //    balance = value;
-            //}
-        }
-    }
-    internal class Program
-    {
+    internal class Program:TypeOfScore
+    { 
+       
         static void Main(string[] args)
-        {          
-            Balance balance = new Balance();
-            int numberofscore = 0;         
-            int scorenumb = score.Score(numberofscore);
-            Console.WriteLine("Сколько денег у вас на счете? ");
-            //balance.B = Convert.ToInt32(Console.ReadLine());
+        {  
+            TypeOfScore.typeofscore(ansDeposit);
+            Console.WriteLine($"Номер счета: {score.Score}");
+            Console.WriteLine($"Баланс счета: {score.Balance}");
+            Console.WriteLine(ansDeposit);
             
-            Console.WriteLine($"\nНомер счета: {scorenumb}");
+            Console.WriteLine("1.Положить на счет средства\n" +
+                              "2.Снять средства со счета\n" +
+                              "3.Информация о счете\n" +
+                              "4.Тип банковского счета\n");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            int cash;
+            switch (choice)
+            {
+                case 1:
+                    if (ansDeposit == false)
+                        Console.WriteLine("средства можно положить только на счет \"С пополнением\"");
+                    else
+                    {
+                        Console.WriteLine("Введите сумму которую хотитите положить на счет: ");
+                        cash = Convert.ToInt32(Console.ReadLine());
+                        Cashin.cashin(cash);
+                    }
 
-            Console.WriteLine($"Баланс счета: {balance.B}");
+                    break;
+                case 2:
+                    Console.WriteLine("Введите сумму которую хотите снять: ");
+                    cash = Convert.ToInt32(Console.ReadLine());
+                    Cashout.cashout(cash);
+                    break;
+                case 3:
+                    Info.info();
+                    break;
+                case 4:
+
+                    break;
+                default:
+                    Console.WriteLine("Выберите любой метод из четырех");
+                    break;
+            }
+            
         }
     }
 }

@@ -8,14 +8,25 @@ namespace Algoritmandprog
 {
     internal class score
     {
-        public static int Score (int numberofscore)
+        private static int _score;
+
+        private static int balance;
+        
+        public static int Balance
         {
-            Random Random = new Random();
-            numberofscore = Random.Next(1000, 10000);
-            return numberofscore;
+            
+            get { return balance; }
+            set { balance = value; }
         }
-       
 
-
+        public static int Score
+        {
+            get
+            {
+                Random random = new Random();
+                _score = random.Next(1000, 10000);
+                return _score;
+            }
+        }
     }
 }
