@@ -10,6 +10,7 @@ namespace Algoritmandprog
             Console.WriteLine("Тип банковского счета:\n" +
             "1.С пополнением\n" +
             "2.Без пополнения\n");
+            Console.Write("Тип счета: ");
             int a = Convert.ToInt32(Console.ReadLine());
             while (true)
             {
@@ -25,15 +26,6 @@ namespace Algoritmandprog
                 }
             }
         }
-        public static string typescore
-        {
-            get
-            {
-                if (ansDeposit)
-                    return "С пополнением";
-                else
-                    return "Без пополнения";
-            }
-        }
+        public static string typescore {get {return ansDeposit ? "С пополнением" : "Без пополнения";}}
     }
 }

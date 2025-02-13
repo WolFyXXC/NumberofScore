@@ -9,7 +9,6 @@ namespace Algoritmandprog
     internal class score
     {
         private static int _score;
-
         private static int balance;
         
         public static int Balance
@@ -17,6 +16,16 @@ namespace Algoritmandprog
             
             get { return balance; }
             set { balance = value; }
+        }
+
+        public static int InfScore
+        {
+            get
+            {
+                return _score;
+                
+            }
+            set { _score = value; }
         }
 
         public static int Score

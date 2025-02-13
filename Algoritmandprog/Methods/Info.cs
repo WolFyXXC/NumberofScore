@@ -6,7 +6,8 @@ namespace Algoritmandprog
     {
         public static void info()
         {
-            Console.WriteLine($"Номер счета: {score.Score}\n" +
+            Console.WriteLine($"\nИнформация о счете:\n" +
+                              $"Номер счета: {score.InfScore}\n" +
                               $"Тип счета: {TypeOfScore.typescore}\n" +
                               $"Баланс счета: {score.Balance}");
         }
