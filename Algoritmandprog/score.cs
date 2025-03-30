@@ -8,7 +8,7 @@ namespace Algoritmandprog
 {
     internal class score
     {
-        private static int _score;
+        private static int _score = 10000;
         private static int balance;
         
         public static int Balance
@@ -30,12 +30,7 @@ namespace Algoritmandprog
 
         public static int Score
         {
-            get
-            {
-                Random random = new Random();
-                _score = random.Next(1000, 10000);
-                return _score;
-            }
+            get { return _score++; }
         }
     }
 }
